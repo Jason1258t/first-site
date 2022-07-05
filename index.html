@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <title>Полимир сервис</title>
@@ -16,8 +17,18 @@
     <header class="header">
         <div class="nav">
             <nav class="nav" id="nav">
+                <div class="mob-menu-icon" id="mob-menu" onclick=showMobileMenu()><img src="image/menu-icon.png"></div>
+                <div class="mob-menu-nav" id="mob-nav">
+                    <div class="mob-menu-exit" onclick=hideMobileMenu()></div>
+                    <ul class="mob-menu">
+                        <li><a href="#about">Описание</a></li>
+                        <li><a href="#equip">Оборудование</a></li>
+                        <li><a href="#production">Продукция</a></li>
+                        <li><a href="#">Изготовление</a></li>
+                    </ul>
+                </div>
                 <a href="#home" class='logo'><img src="image/nedologo.png"></a>
-                <div>
+                <div id="main-nav">
                     <ul class="menu">
                         <li><a href="#about">Описание</a></li>
                         <li><a href="#equip">Оборудование</a></li>
@@ -25,7 +36,8 @@
                         <li><a href="#">Изготовление</a></li>
                     </ul>
                 </div>
-                <a href="#cont" class="tel"><img src="image/phone.png"></a>
+                <a href="#cont" class="tel"><img src="image/phone 2.png" class="base-phone"><img
+                        src="image/simple-phone.png" class="simple-phone"></a>
             </nav>
         </div>
         <div class="container">
@@ -327,13 +339,13 @@
                 <input id="name" class="txt" name="name" type="name" placeholder="Ваше имя">
             </div>
             <div class="form-emph">
-
-                <input id="phone" class="txt" name="phone" type="phone" placeholder="Ваш телефон">
+               
+                <input id="phone" class="txt" name="phone" type="phone" placeholder="Ваш телефон"> 
                 <input id="email" class="txt" name="email" type="email" placeholder="Ваш e-mail">
             </div>
             <textarea id="msg" class="txtarea" name="msg" placeholder="Ваше сообщение:"></textarea>
             <input class="button" type='submit' value='Оставить анкету'>
-
+             
         </form> -->
         </div>
 

@@ -122,7 +122,7 @@ h2 {
 }
 
 .container-4 {
-    background: #F0FBFF;
+    background: #fbffdf;
     width: 1110px;
     margin-top: 80px;
     margin: auto;
@@ -401,6 +401,69 @@ h2 {
 .logo {
     margin-left: 40px;
     margin-right: 60px;
+}
+
+.mob-menu-icon {
+    display: none;
+    width: 100px;
+    height: 21px;
+    /*background: url(../image/menu-icon.png) no-repeat;*/
+    cursor: pointer;
+}
+
+.mob-menu-icon img {
+    width: 100%;
+    height: 100%;
+}
+
+.mob-menu-nav {
+    display: none;
+    max-width: 260px;
+    height: 100vh;
+    background-color: #fff;
+    position: fixed;
+    left: -300px;
+    top: 0;
+    margin: 0;
+    z-index: 10000;
+    transition: all 1s;
+}
+
+.mob-menu-nav.show {
+    left: 0;
+    display: block;
+}
+
+.mob-menu-nav .menu {
+    margin-left: 35px;
+}
+
+.mob-menu-exit {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: url(../image/mob-menu-exit.png);
+    margin-left: 220px;
+}
+
+.mob-menu {
+    margin-left: 35px;
+}
+
+.simple-phone {
+    display: none;
+}
+
+.mob-menu li a {
+    color: #000;
+    font-size: 24px;
+    font-weight: 400;
+    transition: all 0.4s ease;
+}
+
+.mob-menu li a:hover {
+    background: rgba(193, 190, 190, 0.5);
+    margin-left: 10px;
 }
 
 .menu {
@@ -714,7 +777,7 @@ textarea.error {
 
 
 
-@media screen and(max-width: 1200px) {
+@media (max-width: 1200px) {
     h2 {
         font-size: 48px;
     }
@@ -737,8 +800,8 @@ textarea.error {
     }
 
     .tel img {
-        width: 80px;
-        height: 35px;
+        width: 70px;
+        height: 30px;
     }
 
     .logo img {
@@ -807,23 +870,91 @@ textarea.error {
     .footer {
         height: 110px;
     }
-    .footer h6{
+
+    .footer h6 {
         width: 400px;
         font-weight: 400;
     }
 
+    .mob-menu-nav {
+        display: none;
+    }
+
 }
 
-@media screen and(max-width: 991px){
-    
+@media (max-width: 991px) {
+    .logo img {
+        width: 193px;
+        height: 34px;
+    }
+
+    .tel img {
+        width: 60px;
+        height: 26px;
+    }
+
+    .menu li {
+        margin-left: 6px;
+        margin-right: 6px;
+    }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 575px) {
     .arrow-left {
         display: block;
     }
 
     .arrow-right {
         display: block;
+    }
+
+    #nav,
+    .nav,
+    div.nav {
+        height: 45px;
+        justify-content: space-between;
+    }
+
+    .mob-menu-icon {
+        width: 90px;
+        height: 20px;
+        margin-left: 15px;
+    }
+
+    .simple-phone {
+        display: block;
+    }
+
+    .base-phone {
+        display: none;
+    }
+
+    .tel img {
+        margin-right: 15px;
+        width: 31px;
+        height: 31px;
+    }
+
+    #main-nav .menu {
+        display: none;
+    }
+
+    .mob-menu {
+        display: block;
+
+    }
+
+    .mob-menu li {
+        margin-bottom: 15px;
+        border-left: 1px solid black;
+        padding-left: 7px;
+    }
+
+    .mob-menu-icon {
+        display: block;
+    }
+
+    .logo {
+        display: none;
     }
 }

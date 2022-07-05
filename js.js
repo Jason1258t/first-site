@@ -111,3 +111,12 @@ function removeActiveLinks(links) {
 
 console.log(wrappers);
 
+function showMobileMenu() {
+    let menu = document.getElementById("mob-nav");
+    menu.classList.add("show");
+}
+
+function hideMobileMenu() {
+    let menu = document.getElementById("mob-nav");
+    menu.classList.remove("show")
+}
