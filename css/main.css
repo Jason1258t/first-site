@@ -196,7 +196,7 @@ h2 {
 .product-line {
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit,255px);
+    grid-template-columns: repeat(auto-fit, 255px);
     grid-auto-rows: 362px;
     grid-gap: 45px;
     align-items: start;
@@ -644,8 +644,8 @@ a {
 }
 
 .conticons {
-    width: 111px; 
-    height: 35px; 
+    width: 111px;
+    height: 35px;
     margin-top: 11px;
 }
 
@@ -950,6 +950,7 @@ textarea.error {
     .galery {
         width: 70%;
     }
+
     .product-line {
         width: 538px;
         grid-gap: 28px;
@@ -965,7 +966,8 @@ textarea.error {
         display: none;
     }
 
-    .nav, #nav {
+    .nav,
+    #nav {
         justify-content: space-between;
     }
 
@@ -974,6 +976,7 @@ textarea.error {
         height: auto;
         align-items: center;
     }
+
     .cont {
         width: 100%;
         margin-bottom: 10px;
@@ -991,7 +994,8 @@ textarea.error {
         margin: 11px auto;
     }
 
-    .map, #map{
+    .map,
+    #map {
         width: 80%;
         height: 350px;
         margin: auto;
@@ -1001,7 +1005,7 @@ textarea.error {
 
 @media (max-width: 767px) {
 
-    .desc p{
+    .desc p {
         text-align: justify;
     }
 
@@ -1018,7 +1022,7 @@ textarea.error {
         margin-bottom: 20px;
     }
 
-    .line img{
+    .line img {
         position: relative;
         border-radius: 0;
     }
@@ -1099,7 +1103,7 @@ textarea.error {
         width: 100%;
     }
 
-    
+
 }
 
 @media (max-width: 650px) {
@@ -1130,9 +1134,11 @@ textarea.error {
     .product-line {
         width: 305px;
     }
+
     .moreinfo {
         width: 245px;
     }
+
     .card {
         width: 275px;
     }
@@ -1152,8 +1158,8 @@ textarea.error {
         font-size: 13px;
     }
 
-    .offer h1{
-        font-size: 40px;
+    .offer h1 {
+        font-size: 2.5rem;
     }
 
     .mob-menu-icon {
