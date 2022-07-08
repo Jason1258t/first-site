@@ -13,7 +13,7 @@ window.onscroll = function () {
     else {
         if (window.offsetWidth > 575) {
             clearTimeout(showtimer);
-            document.getElementById('nav').style.position = "static";
+            document.getElementById('nav').style.position = "fixed";
             document.getElementById('nav').classList.remove('show-menu');
             document.getElementById('nav').classList.remove('hide');
         }
