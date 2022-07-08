@@ -6,7 +6,6 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    overflow: hidden;
 }
 
 .header {
@@ -1106,6 +1105,10 @@ textarea.error {
 
     .offer p {
         font-size: 13px;
+    }
+
+    .offer h1{
+        font-size: 40px;
     }
 
     .mob-menu-icon {
