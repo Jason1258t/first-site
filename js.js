@@ -11,10 +11,12 @@ window.onscroll = function () {
         showtimer = setTimeout(showNavMenu, 200);
     }
     else {
-        clearTimeout(showtimer);
-        document.getElementById('nav').style.position = "static";
-        document.getElementById('nav').classList.remove('show-menu');
-        document.getElementById('nav').classList.remove('hide');
+        if (window.offsetWidth > 575) {
+            clearTimeout(showtimer);
+            document.getElementById('nav').style.position = "static";
+            document.getElementById('nav').classList.remove('show-menu');
+            document.getElementById('nav').classList.remove('hide');
+        }
 
     }
     let to_top = document.getElementById("to-top");
@@ -42,7 +44,7 @@ function galeryImg() {
     let imgContainers = galery.querySelectorAll(".gimContainer");
 
     if (document.documentElement.clientWidth > 900) {
-        
+
         images[2].style.width = "255px";
         images[2].style.height = "178px";
         images[2].style.marginTop = "65px";
@@ -71,22 +73,22 @@ function galeryImg() {
                 images[img].style.marginTop = "0";
                 images[img].style.borderRadius = "0";
             }
-    
+
             for (let i = 0; i < 3; i++) {
-    
+
                 if (i != hoverImage) {
-    
+
                     let maxWidth = Math.floor((galery.offsetWidth - images[hoverImage].offsetWidth) / galery.offsetWidth * 100) / 2 - 1;
-    
+
                     imgContainers[i].style.minWidth = `${maxWidth}%`;
                     imgContainers[i].style.maxWidth = `${maxWidth}%`;
                 } else {
                     imgContainers[i].style.minWidth = "0";
-    
+
                     let maxWidth = Math.round(images[i].offsetWidth / galery.offsetWidth * 100);
                     imgContainers[i].style.maxWidth = `${maxWidth}%`;
                 }
-    
+
                 imgContainers[i].addEventListener("mouseover", selectImage);
             }
         } else {
@@ -114,7 +116,7 @@ function equipmentResize() {
         let imageWidth = line2.offsetWidth * 0.45;
         let imageHeight = imageWidth * 0.73;
 
-        line2.style.marginTop = `${-imageHeight-4}px`;
+        line2.style.marginTop = `${-imageHeight - 4}px`;
 
         console.log(-imageHeight);
 
@@ -126,7 +128,7 @@ function equipmentResize() {
             img.style.width = `${imageWidth}px`;
             img.style.height = `${imageHeight}px`;
 
-            if (i===0) {
+            if (i === 0) {
                 img.style.left = `${line2.offsetWidth * 0.05}px`;
                 img.style.bottom = "0";
             } else {
@@ -136,7 +138,7 @@ function equipmentResize() {
         }
     } else {
         line2.style.marginTop = "0";
-    
+
         for (let i = 0; i < 2; i++) {
             let img = lines[i].querySelector("img");
             img.style.maxWidth = "45%";
