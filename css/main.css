@@ -65,6 +65,7 @@ h2 {
     margin-top: 42px;
     justify-content: space-between;
     position: relative;
+    overflow: hidden;
 }
 
 .gim1 {
@@ -640,6 +641,12 @@ a {
     padding-top: 10px;
 }
 
+.conticons {
+    width: 111px; 
+    height: 35px; 
+    margin-top: 11px;
+}
+
 .ph1 {
     width: 206px;
     height: 90px;
@@ -955,6 +962,39 @@ textarea.error {
     .logo {
         display: none;
     }
+
+    .nav, #nav {
+        justify-content: space-between;
+    }
+
+    .cont-info {
+        display: block;
+        height: auto;
+        align-items: center;
+    }
+    .cont {
+        width: 100%;
+        margin-bottom: 10px;
+        border-left: none;
+        padding-left: 0;
+        border-bottom: 4px solid #FFE600;
+        padding-bottom: 10px;
+    }
+
+    .phones {
+        width: 100%;
+    }
+
+    .conticons {
+        margin: 11px auto;
+    }
+
+    .map, #map{
+        width: 80%;
+        height: 350px;
+        margin: auto;
+    }
+
 }
 
 @media (max-width: 767px) {
@@ -1057,20 +1097,7 @@ textarea.error {
         width: 100%;
     }
 
-    .cont-info {
-        display: block;
-        height: auto;
-        align-items: center;
-    }
-    .cont {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    .map, #map{
-        width: 80%;
-        height: 250px;
-        margin: auto;
-    }
+    
 }
 
 @media (max-width: 650px) {
@@ -1085,6 +1112,14 @@ textarea.error {
 }
 
 @media (max-width: 575px) {
+
+    .header {
+        background-image: url(../image/mob-header.png);
+    }
+
+    .container {
+        height: 460px;
+    }
 
     .product-line {
         width: 305px;
@@ -1101,6 +1136,10 @@ textarea.error {
     div.nav,
     .simnav {
         height: 45px;
+    }
+
+    .offer {
+        width: 100%;
     }
 
     .offer p {
