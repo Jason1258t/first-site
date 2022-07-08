@@ -27,16 +27,20 @@ window.onscroll = function () {
 
 let hoverImage = 2;
 galeryImg();
-window.addEventListener("resize", galeryImg);
+equipmentResize();
+window.addEventListener("resize", ResizeAll);
 
-
+function ResizeAll() {
+    galeryImg();
+    equipmentResize();
+}
 
 function galeryImg() {
     let galery = document.querySelector(".galery");
     let images = galery.querySelectorAll("img");
     let imgContainers = galery.querySelectorAll(".gimContainer");
 
-    if (document.documentElement.clientWidth > 991) {
+    if (document.documentElement.clientWidth > 900) {
         
         images[2].style.width = "255px";
         images[2].style.height = "178px";
@@ -98,46 +102,48 @@ function galeryImg() {
 
             }
         }
-        
-        
+    }
+}
 
-        if (document.documentElement.clientWidth < 767) {
-            let lines = document.querySelectorAll(".line");
-            let line2 = lines[1];
-            
-            let imageWidth = line2.offsetWidth * 0.45;
-            let imageHeight = imageWidth * 0.73;
 
-            line2.style.marginTop = `${-imageHeight}px`;
+function equipmentResize() {
+    let lines = document.querySelectorAll(".line");
+    let line2 = lines[1];
+    if (document.documentElement.clientWidth <= 767) {
+        let imageWidth = line2.offsetWidth * 0.45;
+        let imageHeight = imageWidth * 0.73;
 
-            console.log(-imageHeight);
+        line2.style.marginTop = `${-imageHeight-4}px`;
 
-            for (let i = 0; i < 2; i++) {
-                let img = lines[i].querySelector("img");
-                img.style.maxWidth = `${imageWidth}px`;
-                img.style.maxHeight = `${imageHeight}px`;
+        console.log(-imageHeight);
 
-                img.style.width = `${imageWidth}px`;
-                img.style.height = `${imageHeight}px`;
+        for (let i = 0; i < 2; i++) {
+            let img = lines[i].querySelector("img");
+            img.style.maxWidth = `${imageWidth}px`;
+            img.style.maxHeight = `${imageHeight}px`;
 
-                if (i===0) {
-                    img.style.left = `${line2.offsetWidth * 0.05}px`;
-                    img.style.bottom = "0";
-                } else {
-                    img.style.marginLeft = `${imageWidth + line2.offsetWidth * 0.05}px`
-                }
+            img.style.width = `${imageWidth}px`;
+            img.style.height = `${imageHeight}px`;
+
+            if (i===0) {
+                img.style.left = `${line2.offsetWidth * 0.05}px`;
+                img.style.bottom = "0";
+            } else {
+                img.style.marginLeft = `${imageWidth + line2.offsetWidth * 0.05}px`;
+                img.style.marginBottom = "20px";
             }
-        } else {
-            let lines = document.querySelectorAll(".line");
-            let line2 = lines[1];
-            line2.style.marginTop = "0";
-        
-            for (let i = 0; i < 2; i++) {
-                let img = lines[i].querySelector("img");
-                img.style.maxWidth = "45%";
-                img.style.maxHeight = "45%";
-                img.style.marginLeft = "0";
-            }
+        }
+    } else {
+        line2.style.marginTop = "0";
+    
+        for (let i = 0; i < 2; i++) {
+            let img = lines[i].querySelector("img");
+            img.style.maxWidth = "45%";
+            img.style.maxHeight = "45%";
+            img.style.width = "45%";
+            img.style.height = "45%";
+            img.style.marginLeft = "0";
+            img.style.marginBottom = "0";
         }
     }
 }

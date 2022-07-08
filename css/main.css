@@ -430,6 +430,7 @@ h2 {
     position: fixed;
     left: -300px;
     top: 0;
+    bottom: 0;
     margin: 0;
     z-index: 10000;
     transition: all 1s;
@@ -975,6 +976,7 @@ textarea.error {
 
     .line img{
         position: relative;
+        border-radius: 0;
     }
 
     .galery {
