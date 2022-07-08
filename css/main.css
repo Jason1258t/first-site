@@ -494,6 +494,7 @@ a {
     display: flex;
     align-items: center;
     width: 100%;
+    box-sizing: border-box;
     height: 90px;
     background: rgba(255, 255, 255, 0.79);
     border: none;
@@ -501,6 +502,7 @@ a {
 
 .simnav {
     width: 100%;
+    box-sizing: border-box;
     height: 90px;
     background-color: #fff;
 }
@@ -1112,6 +1114,10 @@ textarea.error {
 }
 
 @media (max-width: 575px) {
+
+    h2 {
+        font-size: 40px;
+    }
 
     .header {
         background-image: url(../image/mob-header.png);
