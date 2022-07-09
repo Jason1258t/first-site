@@ -7,21 +7,19 @@ window.onscroll = function () {
     let currentScrollpos = window.pageYOffset;
     if (document.documentElement.clientWidth > 575) {
         if (currentScrollpos > 100) {
-
-
             nav = document.getElementById('nav');
             nav.classList.add('hide');
             showtimer = setTimeout(showNavMenu, 200);
         }
         else {
-
-                clearTimeout(showtimer);
-                document.getElementById('nav').style.position = "fixed";
-                document.getElementById('nav').classList.remove('show-menu');
-                document.getElementById('nav').classList.remove('hide');
-
-
+            clearTimeout(showtimer);
+            document.getElementById('nav').style.position = "static";
+            document.getElementById('nav').classList.remove('show-menu');
+            document.getElementById('nav').classList.remove('hide');
         }
+    } else {
+        document.getElementById('nav').style.position = "fixed";
+    }
     let to_top = document.getElementById("to-top");
     if (currentScrollpos > 500) {
         to_top.classList.add("show");
@@ -29,9 +27,8 @@ window.onscroll = function () {
         to_top.classList.remove("show");
     }
 
-  }
-}
 
+}
 let hoverImage = 2;
 galeryImg();
 equipmentResize();
