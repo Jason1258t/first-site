@@ -978,7 +978,8 @@ textarea.error {
     }
 
     .cont {
-        width: 100%;
+        width: 90%;
+        margin: auto;
         margin-bottom: 10px;
         border-left: none;
         padding-left: 0;
@@ -1004,6 +1005,11 @@ textarea.error {
 }
 
 @media (max-width: 767px) {
+
+    .map,
+    #map {
+        height: 300px;
+    }
 
     .desc p {
         text-align: justify;
@@ -1131,6 +1137,11 @@ textarea.error {
 
 @media (max-width: 575px) {
 
+    .map,
+    #map {
+        height: 250px;
+    }
+
     h2 {
         font-size: 40px;
     }
@@ -1187,7 +1198,7 @@ textarea.error {
         height: auto;
     }
 
-    .adress, .mail, .ph1, .ph2 {
+    .adress p, .mail p, .ph1, .ph2 {
         font-size: 20px;
     }
 
