@@ -496,7 +496,7 @@ a {
     width: 100%;
     box-sizing: border-box;
     height: 90px;
-    background: rgba(255, 255, 255, 0.79);
+    background: #fff;
     border: none;
 }
 

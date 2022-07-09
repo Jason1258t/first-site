@@ -19,6 +19,7 @@ window.onscroll = function () {
         }
     } else {
         document.getElementById('nav').style.position = "fixed";
+        document.getElementById('nav').style.zIndex = "100000";
     }
     let to_top = document.getElementById("to-top");
     if (currentScrollpos > 500) {
