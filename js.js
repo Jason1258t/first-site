@@ -5,20 +5,23 @@ let prevScrollpos = window.pageYOffset;
 
 window.onscroll = function () {
     let currentScrollpos = window.pageYOffset;
-    if (currentScrollpos > 100) {
-        nav = document.getElementById('nav');
-        nav.classList.add('hide');
-        showtimer = setTimeout(showNavMenu, 200);
-    }
-    else {
-        if (window.offsetWidth > 575) {
-            clearTimeout(showtimer);
-            document.getElementById('nav').style.position = "static";
-            document.getElementById('nav').classList.remove('show-menu');
-            document.getElementById('nav').classList.remove('hide');
-        }
+    if (document.documentElement.clientWidth > 575) {
+        if (currentScrollpos > 100) {
+            
 
-    }
+            nav = document.getElementById('nav');
+            nav.classList.add('hide');
+            showtimer = setTimeout(showNavMenu, 200);
+        }
+        else {
+            
+                clearTimeout(showtimer);
+                document.getElementById('nav').style.position = "fixed";
+                document.getElementById('nav').classList.remove('show-menu');
+                document.getElementById('nav').classList.remove('hide');
+            
+
+        }
     let to_top = document.getElementById("to-top");
     if (currentScrollpos > 500) {
         to_top.classList.add("show");
@@ -27,7 +30,7 @@ window.onscroll = function () {
     }
 
 }
-
+}
 let hoverImage = 2;
 galeryImg();
 equipmentResize();

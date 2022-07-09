@@ -1047,6 +1047,18 @@ textarea.error {
         justify-content: space-between;
     }
 
+    #simple-right-animate {
+        transform: translateX(0);
+    }
+
+    #simple-animate {
+        transform: translateX(0);
+    }
+
+    .to-top {
+        display: none;
+    }
+
     .mob-menu-icon {
         width: 100px;
         height: 22px;
@@ -1132,15 +1144,18 @@ textarea.error {
     }
 
     .product-line {
-        width: 305px;
+        width: 90%;
+        grid-template-columns: auto;
     }
 
     .moreinfo {
-        width: 245px;
+        width: 90%;
+        box-sizing: border-box;
     }
 
     .card {
-        width: 275px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     #nav,
@@ -1172,4 +1187,17 @@ textarea.error {
         height: auto;
     }
 
+    .adress, .mail, .ph1, .ph2 {
+        font-size: 20px;
+    }
+
+    .adress, .mail {
+        width: 100%;
+    }
+
+    .footer h6{
+        font-size: 10px;
+        width: 80%;
+        height: auto;
+    }
 }
