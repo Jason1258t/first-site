@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/home2.css">
+</head>
+
+<body>
+    <style>
+        #con2{
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    margin-top: 400px;
+    background: rgba(0,0,0,0.55);
+    transition-property: background;      
+    transition-duration: 0.7s;
+}
+
+    </style>
+    <div id="con2">
+
+    </div>
+    <script>
+            document.onmousemove = function(e) {
+            var event = e || window.event;
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+            console.log(mouseX + ' x ' + mouseY);
+                if (mouseX >= 0 && mouseX <= 1800 && mouseY >= 400 && mouseY <= 800){
+                document.getElementById("con2").style.backgroundColor = 'rgba(0,0,0,0)';
+            }
+        else{
+            document.getElementById("con2").style.backgroundColor = 'rgba(0,0,0,0.55)';
+        }
+        }
+            
+                
+    </script>
+</body>
+
+</html>

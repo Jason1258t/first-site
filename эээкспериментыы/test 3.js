@@ -1,174 +1,3 @@
-let showtimer
-
-let prevScrollpos = window.pageYOffset;
-
-
-window.onscroll = function () {
-    let currentScrollpos = window.pageYOffset;
-    if (document.documentElement.clientWidth > 575) {
-        if (currentScrollpos > 100) {
-            nav = document.getElementById('nav');
-            nav.classList.add('hide');
-            showtimer = setTimeout(showNavMenu, 200);
-        }
-        else {
-            clearTimeout(showtimer);
-            document.getElementById('nav').style.position = "static";
-            document.getElementById('nav').classList.remove('show-menu');
-            document.getElementById('nav').classList.remove('hide');
-        }
-    } else {
-        document.getElementById('nav').style.position = "fixed";
-        document.getElementById('nav').style.zIndex = "100000";
-    }
-    let to_top = document.getElementById("to-top");
-    if (currentScrollpos > 500) {
-        to_top.classList.add("show");
-    } else {
-        to_top.classList.remove("show");
-    }
-
-
-}
-let hoverImage = 2;
-galeryImg();
-equipmentResize();
-window.addEventListener("resize", ResizeAll);
-
-function ResizeAll() {
-    galeryImg();
-    equipmentResize();
-}
-
-function galeryImg() {
-    let galery = document.querySelector(".galery");
-    let images = galery.querySelectorAll("img");
-    let imgContainers = galery.querySelectorAll(".gimContainer");
-
-    if (document.documentElement.clientWidth > 900) {
-
-        images[2].style.width = "255px";
-        images[2].style.height = "178px";
-        images[2].style.marginTop = "65px";
-
-        images[1].style.width = "350px";
-        images[1].style.height = "245px";
-
-        images[0].style.width = "255px";
-        images[0].style.height = "178px";
-        images[0].style.marginTop = "65px";
-
-        for (let i = 0; i < 3; i++) {
-            images[i].style.borderRadius = "7px";
-        }
-
-        for (let cont = 0; cont < 3; cont++) {
-            imgContainers[cont].style.minWidth = "0";
-            imgContainers[cont].style.maxWidth = "50%";
-            imgContainers[cont].style.marginRight = "0";
-        }
-    } else {
-        if (document.documentElement.clientWidth > 575) {
-            for (let img = 0; img < 3; img++) {
-                images[img].style.width = "auto";
-                images[img].style.height = "100%";
-                images[img].style.marginTop = "0";
-                images[img].style.borderRadius = "0";
-            }
-
-            for (let i = 0; i < 3; i++) {
-
-                if (i != hoverImage) {
-
-                    let maxWidth = Math.floor((galery.offsetWidth - images[hoverImage].offsetWidth) / galery.offsetWidth * 100) / 2 - 1;
-
-                    imgContainers[i].style.minWidth = `${maxWidth}%`;
-                    imgContainers[i].style.maxWidth = `${maxWidth}%`;
-                } else {
-                    imgContainers[i].style.minWidth = "0";
-
-                    let maxWidth = Math.round(images[i].offsetWidth / galery.offsetWidth * 100);
-                    imgContainers[i].style.maxWidth = `${maxWidth}%`;
-                }
-
-                imgContainers[i].addEventListener("mouseover", selectImage);
-            }
-        } else {
-            for (let i = 0; i < 3; i++) {
-                images[i].style.width = "100%";
-                images[i].style.height = "auto";
-                images[i].style.marginTop = "0";
-                images[i].style.borderRadius = "0";
-
-                imgContainers[i].style.minWidth = "0";
-                imgContainers[i].style.maxWidth = "100%";
-                imgContainers[i].style.width = "100%";
-                imgContainers[i].style.height = "auto";
-
-            }
-        }
-    }
-}
-
-
-function equipmentResize() {
-    let lines = document.querySelectorAll(".line");
-    let line2 = lines[1];
-    if (document.documentElement.clientWidth <= 767) {
-        let imageWidth = line2.offsetWidth * 0.45;
-        let imageHeight = imageWidth * 0.73;
-
-        line2.style.marginTop = `${-imageHeight - 4}px`;
-
-        console.log(-imageHeight);
-
-        for (let i = 0; i < 2; i++) {
-            let img = lines[i].querySelector("img");
-            img.style.maxWidth = `${imageWidth}px`;
-            img.style.maxHeight = `${imageHeight}px`;
-
-            img.style.width = `${imageWidth}px`;
-            img.style.height = `${imageHeight}px`;
-
-            if (i === 0) {
-                img.style.left = `${line2.offsetWidth * 0.05}px`;
-                img.style.bottom = "0";
-            } else {
-                img.style.marginLeft = `${imageWidth + line2.offsetWidth * 0.05}px`;
-                img.style.marginBottom = "20px";
-            }
-        }
-    } else {
-        line2.style.marginTop = "0";
-
-        for (let i = 0; i < 2; i++) {
-            let img = lines[i].querySelector("img");
-            img.style.maxWidth = "45%";
-            img.style.maxHeight = "45%";
-            img.style.width = "45%";
-            img.style.height = "45%";
-            img.style.marginLeft = "0";
-            img.style.marginBottom = "0";
-        }
-    }
-}
-
-function selectImage(e) {
-    let image = e.target;
-    let id = Number(image.id);
-
-    hoverImage = id;
-    galeryImg();
-}
-
-
-function showNavMenu() {
-    nav.style.position = "fixed";
-    nav.style.top = "0";
-    nav.style.zIndex = "10000"
-    nav.classList.add('show-menu')
-}
-
 let galerys = document.querySelectorAll(".production-galery");
 let visibleWidth = document.querySelector(".visible-galery").offsetWidth;
 
@@ -497,13 +326,11 @@ for (let i = 0; i < galerys.length; i++) {
             contLeft: contWidth * n,
         }
         var img = imgs[n];
-        img.addEventListener("click", {handleEvent: onClickimg, id: i, item: n});
+        img.addEventListener("click", {handleEvent: onClickimg, id: i, item: n}) 
     };
 
-    console.log(`#galery-section-${i}`);
-
-    document.querySelector(`#galery-section-${i}`).querySelector(".slide-right").addEventListener("click", { handleEvent: nextItem, id: i });
-    document.querySelector(`#galery-section-${i}`).querySelector(".slide-left").addEventListener("click", { handleEvent: previousItem, id: i });
+    document.getElementById(`${i}`).querySelector(".slide-right").addEventListener("click", { handleEvent: nextItem, id: i });
+    document.getElementById(`${i}`).querySelector(".slide-left").addEventListener("click", { handleEvent: previousItem, id: i });
 
     SetSelectedItem(i, GALERYS[i].selectedItem, "right")
 }
@@ -677,14 +504,4 @@ function fillContent() {
             galery.appendChild(newImg);
         }
     }
-}
-
-function showMobileMenu() {
-    let menu = document.getElementById("mob-nav");
-    menu.classList.add("show");
-}
-
-function hideMobileMenu() {
-    let menu = document.getElementById("mob-nav");
-    menu.classList.remove("show")
 }

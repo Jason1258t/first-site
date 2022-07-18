@@ -1,0 +1,27 @@
+{
+    "production1": {
+        "len": 5,
+        "imgs": [
+            {
+                "src": "image/production-1/image-1.JPG",
+                "alt": "Ответрка"
+            },
+            {
+                "src": "image/production-1/image-2.JPG",
+                "alt": "Ползун"
+            },
+            {
+                "src": "image/production-1/image-3.JPG",
+                "alt": "Ролик"
+            },
+            {
+                "src": "image/production-1/image-4.JPG",
+                "alt": "Ручка"
+            },
+            {
+                "src": "image/production-1/image-5.JPG",
+                "alt": "Фланец"
+            }
+        ]
+    }
+}

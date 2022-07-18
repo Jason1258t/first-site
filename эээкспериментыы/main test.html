@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="test.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+        <div class="item4">4</div>
+        <div class="item5">5</div>
+        <div class="item6">6</div>
+    </div>
+
+   <div class="container-5">
+
+        <div class="chapter" id="production-1">
+            <div class="card-section">
+                <div class="card">
+                    <div id="ContentContainer">
+                        <div class="wrapper" id="wrapper-1">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="galery-section">
+                <div class="visible-galery">
+                    <div class="production-galery">
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+        let container = document.querySelector(".container");
+        let blocks = container.querySelectorAll("div");
+        let colors = ["#ACF4B6", "#F2D272", "#5CF2E3", "#D7AEF2", "#88F2C1", "#F2935C"];
+
+        for (let i = 0; i < blocks.length; i++) {
+            blocks[i].style.backgroundColor = colors[i];
+        }
+    </script>
+    <script src="test.js"></script>
+</body>
+
+</html>
