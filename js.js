@@ -30,6 +30,10 @@ window.onscroll = function () {
 
 
 }
+
+window.onload = setTimeout(ResizeAll, 1000);
+
+
 let hoverImage = 2;
 galeryImg();
 equipmentResize();
@@ -38,6 +42,10 @@ window.addEventListener("resize", ResizeAll);
 function ResizeAll() {
     galeryImg();
     equipmentResize();
+    
+    for (let i = 0; i < GALERYS.length; i++) {
+        sizeImgs(GALERYS[i].imgs);
+    }
 }
 
 function galeryImg() {
@@ -470,7 +478,7 @@ const config = [
 
 fillContent();
 
-let imgWidth = visibleWidth * 0.236;
+let imgWidth = document.querySelector(".production-galery").querySelector("img").offsetWidth;
 let margin = visibleWidth * 0.02;
 
 let content = document.querySelector(".content");
@@ -483,6 +491,7 @@ for (let i = 0; i < galerys.length; i++) {
     console.log(galery);
     let imgs = galery.querySelectorAll("img");
     sizeImgs(imgs);
+    console.log(imgWidth + " " + visibleWidth + " " + margin + "size imgs")
     GALERYS[i] = {
         galery: galery,
         imgs: imgs,
@@ -510,11 +519,17 @@ for (let i = 0; i < galerys.length; i++) {
 
 
 function sizeImgs(imgs) {
-    console.log("sizeImgs");
-    console.log(imgs);
-    console.log(imgs.length);
+    visibleWidth = document.querySelector(".visible-galery").offsetWidth;
+    imgWidth = document.querySelector(".production-galery").querySelector("img").offsetWidth;
+    margin = visibleWidth * 0.02;
+    var imgHeight = document.querySelector(".production-galery").querySelector("img").offsetHeight;
+    var section = imgs[0].offsetParent.offsetParent.offsetParent;
+    var right = section.querySelector(".slide-right");
+    var left = section.querySelector(".slide-left");
+    right.style.height = left.style.height = `${imgHeight * 203/155}px`;
+    right.style.width = left.style.width = `${32/203*imgHeight}px`;
+
     for (let n = 0; n < imgs.length; n++) {
-        imgs[n].style.width = `${imgWidth}px`;
         imgs[n].style.marginRight = `${margin}px`;
     }
 }
