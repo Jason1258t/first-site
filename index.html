@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="image/nn.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 
 <body>
@@ -79,7 +80,7 @@
     </section>
     <p><a name="equip"></a></p>
     <section class="equip">
-        <div class="container-3" >
+        <div class="container-3">
             <h2>Оборудование</h2>
 
             <div class="line" id="simple-bt-animate">
@@ -112,17 +113,17 @@
             <div class="moreinfo">
                 <p>В этом разделе представлены прошлые заказы. При заказе
                     вы можете запросить и новую деталь. С процессом изготовления
-                    детали, начиная от идее заканчивая готовым изделием можно ознакомится 
-                    по ссылке в <a href="#moreinfo">конце раздела</a> 
+                    детали, начиная от идее заканчивая готовым изделием можно ознакомится
+                    по ссылке в <a href="#moreinfo">конце раздела</a>
                 </p>
-            </div> 
+            </div>
             <div class="chapter" id="production-1">
                 <h3>Изделия с закладными</h3>
                 <div class="card-section">
                     <div class="card">
                         <div id="ContentContainer">
                             <div class="wrapper" id="wrapper-1">
-                                
+
                             </div>
                         </div>
                         <div class="counter"></div>
@@ -132,12 +133,12 @@
                     <div class="slide-left"></div>
                     <div class="visible-galery">
                         <div class="production-galery">
-                            
+
                         </div>
                     </div>
                     <div class="slide-right"></div>
                 </div>
-        
+
             </div>
             <div class="chapter" id="production-2">
                 <h3>Комплектующие для спортивных товаров</h3>
@@ -145,7 +146,7 @@
                     <div class="card">
                         <div id="ContentContainer">
                             <div class="wrapper" id="wrapper-2">
-                                
+
                             </div>
                         </div>
                         <div class="counter"></div>
@@ -155,12 +156,12 @@
                     <div class="slide-left"></div>
                     <div class="visible-galery">
                         <div class="production-galery">
-                            
+
                         </div>
                     </div>
                     <div class="slide-right"></div>
                 </div>
-        
+
             </div>
             <div class="chapter" id="production-3">
                 <h3>Электротехника</h3>
@@ -168,7 +169,7 @@
                     <div class="card">
                         <div id="ContentContainer">
                             <div class="wrapper" id="wrapper-3">
-                                
+
                             </div>
                         </div>
                         <div class="counter"></div>
@@ -178,12 +179,12 @@
                     <div class="slide-left"></div>
                     <div class="visible-galery">
                         <div class="production-galery">
-                            
+
                         </div>
                     </div>
                     <div class="slide-right"></div>
                 </div>
-        
+
             </div>
             <div class="chapter" id="production-4">
                 <h3>Разное</h3>
@@ -191,7 +192,7 @@
                     <div class="card">
                         <div id="ContentContainer">
                             <div class="wrapper" id="wrapper-4">
-                                
+
                             </div>
                         </div>
                         <div class="counter"></div>
@@ -201,12 +202,12 @@
                     <div class="slide-left"></div>
                     <div class="visible-galery">
                         <div class="production-galery">
-                            
+
                         </div>
                     </div>
                     <div class="slide-right"></div>
                 </div>
-        
+
             </div>
             <div class="moreinfo" id="moreinfo">
                 <h3>Дополнительно</h3>
@@ -255,26 +256,23 @@
 
             </div>
             <div class="form">
-                            
-        <form id="contact" action="sendmessage.php" method="post" name="contact">
-            <h3>Свяжитель с нами</h3>
-             <div class="form-name">
-                 <input id="name" class="txt" name="name" type="name" placeholder="Ваше имя">
-             </div>
-             <div class="form-emph">
-                
-                 <input id="phone" class="txt" name="phone" type="phone" placeholder="Ваш телефон"> 
-                 <input id="email" class="txt" name="email" type="email" placeholder="Ваш e-mail">
-             </div>
-             <textarea id="msg" class="txtarea" name="msg" placeholder="Ваше сообщение:"></textarea>
-             <input class="button" type='submit' value='Оставить анкету'>
-              
-         </form>
+
+                <form id="contact" action="http://localhost/polim/form-script.php" method="post" name="contact">
+                    <h3>Свяжитель с нами</h3>
+
+                    <input id="name" class="txt" name="name" type="name" placeholder="Ваше имя" data-reg="[A-Za-zА-Яа-яЁё]+(\s+[A-Za-zА-Яа-яЁё]+)?">
+                    <input id="phone" class="txt" name="phone" type="phone" placeholder="Ваш телефон" data-reg="^((\+7|7|8)+([0-9]){10})$">
+                    <input id="email" class="txt" name="email" type="email" placeholder="Ваш e-mail" data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$">
+
+                    <textarea id="msg" class="txtarea" name="text" placeholder="Ваше сообщение:" required></textarea>
+                    <input class="button" id="button" type='submit' value='Оставить анкету'>
+
+                </form>
             </div>
 
 
         </div>
-
+        <script src="./form.js"></script>
     </section>
 
 
